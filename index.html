@@ -22,7 +22,7 @@
 </head>
 <body>
     <img id="sodaCan" src="https://raw.githubusercontent.com/jnealm/website/main/P1010726.JPG" alt="Soda Can">
-    <audio id="canSound" src="https://raw.githubusercontent.com/username/repository/main/audio/can_open.mp3"></audio>
+    <audio id="canSound" src="https://raw.githubusercontent.com/jnealm/website/main/Soda%20Can.mp3"></audio>
 
     <script>
         const sodaCan = document.getElementById('sodaCan');
@@ -31,10 +31,13 @@
 
         sodaCan.addEventListener('click', () => {
             if (isClosedCan) {
-                // Play sound and switch to open can
+                // Play sound immediately
                 canSound.play();
-                sodaCan.src = 'https://raw.githubusercontent.com/jnealm/website/main/P1010727.JPG';
-                isClosedCan = false;
+                // Delay image change by 500ms
+                setTimeout(() => {
+                    sodaCan.src = 'https://raw.githubusercontent.com/jnealm/website/main/P1010727.JPG';
+                    isClosedCan = false;
+                }, 500);
             }
         });
     </script>
