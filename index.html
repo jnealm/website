@@ -1,53 +1,66 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Soda Can Click</title>
-    <style>
-        body {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-            background-color: #f0f0f0;
-        }
-        img {
-            width: 200px;
-            height: auto;
-            cursor: pointer;
-        }
-        p {
-            margin-top: 10px;
-            font-family: Arial, sans-serif;
-            font-size: 18px;
-            color: #333;
-        }
-    </style>
-</head>
-<body>
-    <img id="sodaCan" src="https://raw.githubusercontent.com/jnealm/website/main/P1010726.JPG" alt="Soda Can">
-    <p>Click me for a surprise!</p>
-    <audio id="canSound" src="https://raw.githubusercontent.com/jnealm/website/main/Soda%20Can.mp3"></audio>
+   <html lang="en">
+   <head>
+       <meta charset="UTF-8">
+       <meta name="viewport" content="width=device-width, initial-scale=1.0">
+       <title>Soda Can Click</title>
+       <style>
+           body {
+               display: flex;
+               flex-direction: column;
+               justify-content: center;
+               align-items: center;
+               height: 100vh;
+               margin: 0;
+               background-color: #f0f0f0;
+           }
+           img {
+               width: 200px;
+               height: auto;
+               cursor: pointer;
+           }
+           p {
+               margin-top: 10px;
+               font-family: Arial, sans-serif;
+               font-size: 18px;
+               color: #333;
+           }
+           nav {
+               margin-top: 10px;
+           }
+           nav a {
+               color: #333;
+               text-decoration: none;
+               font-family: Arial, sans-serif;
+               font-size: 16px;
+           }
+           nav a:hover {
+               text-decoration: underline;
+           }
+       </style>
+   </head>
+   <body>
+       <img id="sodaCan" src="https://raw.githubusercontent.com/jnealm/website/main/P1010726.JPG" alt="Soda Can">
+       <p>Click me for a surprise!</p>
+       <nav>
+           <a href="about">About</a>
+       </nav>
+       <audio id="canSound" src="https://raw.githubusercontent.com/jnealm/website/main/Soda%20Can.mp3"></audio>
 
-    <script>
-        const sodaCan = document.getElementById('sodaCan');
-        const canSound = document.getElementById('canSound');
-        let isClosedCan = true;
+       <script>
+           const sodaCan = document.getElementById('sodaCan');
+           const canSound = document.getElementById('canSound');
+           let isClosedCan = true;
 
-        sodaCan.addEventListener('click', () => {
-            if (isClosedCan) {
-                // Play sound immediately
-                canSound.play();
-                // Delay image change by 500ms
-                setTimeout(() => {
-                    sodaCan.src = 'https://raw.githubusercontent.com/jnealm/website/main/P1010727.JPG';
-                    isClosedCan = false;
-                }, 500);
-            }
-        });
-    </script>
-</body>
-</html>
+           sodaCan.addEventListener('click', () => {
+               if (isClosedCan) {
+                   canSound.play();
+                   setTimeout(() => {
+                       sodaCan.src = 'https://raw.githubusercontent.com/jnealm/website/main/P1010727.JPG';
+                       isClosedCan = false;
+                   }, 500);
+               }
+           });
+       </script>
+   </body>
+   </html>
